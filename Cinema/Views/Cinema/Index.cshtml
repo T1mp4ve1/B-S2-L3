@@ -1,0 +1,37 @@
+﻿@model Cinema.Views.Cinema.IndexModel
+@{
+    ViewBag.Title = "Prenotazione biglietti";
+}
+
+<h1>Prenotazione biglietti</h1>
+
+<hr />
+
+<form asp-action="Book" method="post">
+    <div>
+        <label>Nome:</label><br/>
+        <input type="text" name="name" required />
+    </div>
+    <div>
+        <label>Cognome:</label><br/>
+        <input type="text" name="lastName" required />
+    </div>
+    <div>
+        <label>Sala:</label><br/>
+        <select name="room" required>
+            @foreach (var r in ViewBag.Rooms)
+            {
+                <option value="@r">@r</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Tipo Biglietto:</label><br/>
+        <select name="type" required>
+            <option value="Full">Pieno</option>
+            <option value="Reduced">Ridotto</option>
+        </select>
+    </div>
+    <br/>
+    <button type="submit">Registra</button>
+</form>
