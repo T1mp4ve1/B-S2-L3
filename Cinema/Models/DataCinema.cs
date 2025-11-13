@@ -6,10 +6,24 @@
 
         public static Dictionary<string, int> RoomCapacity = new Dictionary<string, int>
         {
-            {"SALA NORD", 120 },
-            {"SALA EST", 120 },
-            {"SALA SUD", 120 },
+        {"NORD", 120 },
+        {"EST", 120 },
+        {"SUD", 120 },
         };
 
+        //TOTAL
+        public static int GetTotalForRoom(string room)
+        {
+            return Tickets.Count(t => t.Room == room);
+        }
+
+        //RIDOTTI
+
+
+        //RIMANENTI
+        //public static int GetRemaining(string room)
+        //{
+        //    return Tickets.Count(t => t.Room == room);
+        //}
     }
 }

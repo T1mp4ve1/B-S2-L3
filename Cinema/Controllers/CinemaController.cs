@@ -7,8 +7,6 @@ namespace Cinema.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Rooms = DataCinema.RoomCapacity.Keys;
-            ViewBag.Tickets = DataCinema.Tickets;
             return View();
         }
 
