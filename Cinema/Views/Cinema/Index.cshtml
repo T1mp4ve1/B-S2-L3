@@ -6,16 +6,18 @@
 <h1>Prenotazione biglietti</h1> 
 <hr />
 
-<form asp-action="Book" method="post">
-    <div>
+<form asp-action="Book" method="post" class="bg-light p-4">
+
+    <div class="mb-2">
         <label>Nome:</label><br/>
        <input type="text" name="name" required /> 
     </div>
-    <div>
+    <div class="mb-2">
         <label>Cognome:</label><br/>
-         <input type="text" name="lastName" required /> 
-    </div>
-    <div>
+         <input type="text" name="lastName" required />
+        </div>
+
+    <div class="mb-2">
         <label>Sala:</label><br/>
          <select name="room" required>
              <option>NORD</option>
@@ -23,7 +25,7 @@
             <option>SUD</option>
         </select>
     </div>
-    <div>
+    <div class="mb-2">
         <label>Tipo Biglietto:</label><br/>
          <select name="type" required>
             <option>Ridotto</option>
@@ -31,16 +33,18 @@
         </select>
     </div>
 <br/>
-    <button type="submit">Registra</button>
+    <button type="submit" class="btn btn-primary rounded-0">Registra</button>
 </form>
 
-     <table border="1" cellpadding="5" style="border-collapse: collapse; margin-top: 30px">
-            <tr style="background-color: aquamarine">
+     <table class="table table-striped table-bordered text-center mt-4">
+         <thead class="table-primary">
+            <tr>
                 <th>Sala</th>
                 <th>Totali venduti</th>
                 <th>Ridotti</th>
                 <th>Rimanenti</th>
-            </tr>
+        </tr>
+    </thead>
 
     @foreach (var r in Cinema.Models.DataCinema.RoomCapacity.Keys)
     {
@@ -56,6 +60,3 @@
         </tr>
     }      
     </table>
-
-       
-        
