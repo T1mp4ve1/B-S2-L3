@@ -18,12 +18,15 @@
         }
 
         //RIDOTTI
-
+        public static int GetReduced(string room)
+        {
+            return Tickets.Count(t => t.Room == room && t.Type == "Ridotto");
+        }
 
         //RIMANENTI
-        //public static int GetRemaining(string room)
-        //{
-        //    return Tickets.Count(t => t.Room == room);
-        //}
+        public static int GetRemaining(string room)
+        {
+            return Tickets.Count(t => t.Room == room);
+        }
     }
 }

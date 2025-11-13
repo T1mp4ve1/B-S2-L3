@@ -44,9 +44,9 @@
 
     @foreach (var r in Cinema.Models.DataCinema.RoomCapacity.Keys)
     {
-        int total = Cinema.Models.DataCinema.GetTotalForRoom(r);
-        int remaining = 120 - total;
-        int reduced = 0;
+        int total = Cinema.Models.DataCinema.GetTotalForRoom(r);     
+        int reduced = Cinema.Models.DataCinema.GetReduced(r);
+        int remaining = Cinema.Models.DataCinema.RoomCapacity[r] - total;
 
         <tr>
             <td>@r</td>
